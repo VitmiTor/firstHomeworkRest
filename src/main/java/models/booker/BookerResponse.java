@@ -17,10 +17,10 @@ public class BookerResponse {
     private final String additionalNeed;
     @JsonProperty("bookingdates")
     private final BookingDatesResponse bookingDates;
+    private int numberMin = 50;
+    private int numberMax = 500;
 
     public BookerResponse() {
-        var numberMin = 50;
-        var numberMax = 500;
         var faker = new Faker();
         firstname = faker.name().firstName();
         lastname = faker.name().lastName();

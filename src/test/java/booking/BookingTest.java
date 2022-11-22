@@ -109,7 +109,6 @@ public class BookingTest extends BaseTest {
                 .time(lessThan(4000L));
     }
 
-
     @Test(groups = regression)
     public void deleteInexistanceIDTest() {
         var id = 50000;
@@ -151,5 +150,4 @@ public class BookingTest extends BaseTest {
                 .statusCode(403)
                 .time(lessThan(4000L));
     }
-
 }

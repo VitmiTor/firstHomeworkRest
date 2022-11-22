@@ -19,6 +19,5 @@ public class PingTest extends BaseTest {
         response.then().assertThat()
                 .statusCode(201)
                 .time(lessThan(4000L));
-
     }
 }
