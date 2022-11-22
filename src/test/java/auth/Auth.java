@@ -19,10 +19,6 @@ public class Auth extends BaseTest {
         var requesSpecification = RestAssured.given();
         requesSpecification.contentType(ContentType.JSON);
 
-        /*var authScheme = new PreemptiveBasicAuthScheme();
-        authScheme.setUserName("admin");
-        authScheme.setPassword("password123");*/
-
         var bookerRespond = new TokenBody();
         requesSpecification.body(bookerRespond);
 

@@ -12,6 +12,4 @@ public class TokenBody {
         this.username = "admin";
         this.password = "password123";
     }
-
-
 }

@@ -15,10 +15,9 @@ import static org.hamcrest.Matchers.lessThan;
 
 public class BookingTest extends BaseTest {
 
-
     @Test
-    public void getBooking() {
-        var id = 1366;
+    public void getBookingTest() {
+        var id = 69592;
         var schemaJson = "booker/bookerSchema.json";
 
         RestAssured.baseURI = baseUrl;
@@ -32,7 +31,6 @@ public class BookingTest extends BaseTest {
 
         var response = requestSpecification.request(Method.GET);
 
-
         response.then().assertThat()
                 .statusCode(200)
                 .time(lessThan(4000L))
@@ -40,7 +38,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test
-    public void createBooking() {
+    public void createBookingTest() {
         RestAssured.baseURI = baseUrl;
         var schemaFile = "booker/createBookerSchema.json";
         var requestSpecification = RestAssured.given();
@@ -72,8 +70,8 @@ public class BookingTest extends BaseTest {
     }
 
     @Test
-    public void deleteBooking() {
-        var id = 237;
+    public void deleteBookingTest() {
+        var id = 69592;
 
         RestAssured.baseURI = baseUrl;
         var requestSpecification = RestAssured.given();
@@ -88,15 +86,14 @@ public class BookingTest extends BaseTest {
 
         var response = requestSpecification.request(Method.DELETE);
 
-
         response.then().assertThat()
                 .statusCode(201)
                 .time(lessThan(4000L));
     }
 
     @Test
-    public void getNegative() {
-        var id = 237;
+    public void getNegativeTest() {
+        var id = 69592;
 
         RestAssured.baseURI = baseUrl;
         var requestSpecification = RestAssured.given();
@@ -116,7 +113,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test
-    public void idNotFound() {
+    public void idNotFoundTest() {
         var id = 5000;
         var schemaJson = "booker/bookerSchema.json";
 
@@ -138,7 +135,7 @@ public class BookingTest extends BaseTest {
     }
 
     @Test
-    public void deleteFail() {
+    public void deleteFailTest() {
         var id = 192;
 
         RestAssured.baseURI = baseUrl;
@@ -159,7 +156,7 @@ public class BookingTest extends BaseTest {
 
 
     @Test
-    public void deleteInexistance() {
+    public void deleteInexistanceTest() {
         var id = 50000;
 
         RestAssured.baseURI = baseUrl;
