@@ -36,5 +36,4 @@ public class Auth extends BaseTest {
                 .time(lessThan(3000L))
                 .body(JsonSchemaValidator.matchesJsonSchema(getSchema(schemaFile)));
     }
-
 }
