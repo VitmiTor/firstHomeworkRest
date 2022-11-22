@@ -12,20 +12,20 @@ import utilities.RequestFilter;
 import static org.hamcrest.Matchers.lessThan;
 
 public class Auth extends BaseTest {
-    @Test
+    @Test(groups = "Regression")
     public void getToken() {
         RestAssured.baseURI = baseUrl;
         var schemaFile = "token/token.json";
-        var requesSpecification = RestAssured.given();
-        requesSpecification.contentType(ContentType.JSON);
+        var requestSpecification = RestAssured.given();
+        requestSpecification.contentType(ContentType.JSON);
 
         var bookerRespond = new TokenBody();
-        requesSpecification.body(bookerRespond);
+        requestSpecification.body(bookerRespond);
 
-        requesSpecification.filter(new RequestFilter());
-        requesSpecification.basePath("auth");
+        requestSpecification.filter(new RequestFilter());
+        requestSpecification.basePath("auth");
 
-        var response = requesSpecification.request(Method.POST);
+        var response = requestSpecification.request(Method.POST);
 
         var responsebody = response.then().assertThat()
                 .statusCode(200)

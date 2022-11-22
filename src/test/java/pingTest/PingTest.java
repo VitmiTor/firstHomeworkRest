@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.lessThan;
 
 public class PingTest extends BaseTest {
-    @Test
+    @Test(groups = "Smoke")
     public void pingTest() {
         RestAssured.baseURI = baseUrl;
         var requestSpecification = RestAssured.given();
@@ -19,6 +19,6 @@ public class PingTest extends BaseTest {
         response.then().assertThat()
                 .statusCode(201)
                 .time(lessThan(4000L));
-        
+
     }
 }
