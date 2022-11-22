@@ -106,7 +106,6 @@ public class BookingTest extends BaseTest {
 
         var response = requestSpecification.request(Method.GET);
 
-
         response.then().assertThat()
                 .statusCode(404)
                 .time(lessThan(4000L));
@@ -127,7 +126,6 @@ public class BookingTest extends BaseTest {
         requestSpecification.basePath("booking/{bookerID}");
 
         var response = requestSpecification.request(Method.GET);
-
 
         response.then().assertThat()
                 .statusCode(404)
@@ -156,7 +154,7 @@ public class BookingTest extends BaseTest {
 
 
     @Test
-    public void deleteInexistanceTest() {
+    public void deleteInexistanceIDTest() {
         var id = 50000;
 
         RestAssured.baseURI = baseUrl;
@@ -171,7 +169,6 @@ public class BookingTest extends BaseTest {
         requestSpecification.basePath("booking/{bookerID}");
 
         var response = requestSpecification.request(Method.DELETE);
-
 
         response.then().assertThat()
                 .statusCode(405)
