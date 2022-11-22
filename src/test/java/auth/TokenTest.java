@@ -11,7 +11,7 @@ import utilities.RequestFilter;
 
 import static org.hamcrest.Matchers.lessThan;
 
-public class Auth extends BaseTest {
+public class TokenTest extends BaseTest {
     @Test(groups = "Regression")
     public void getToken() {
         RestAssured.baseURI = baseUrl;

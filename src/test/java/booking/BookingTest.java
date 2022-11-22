@@ -148,7 +148,7 @@ public class BookingTest extends BaseTest {
         var response = requestSpecification.request(Method.DELETE);
 
         response.then().assertThat()
-                .statusCode(405)
+                .statusCode(403)
                 .time(lessThan(4000L));
     }
 
