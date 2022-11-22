@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.lessThan;
 
 public class BookingTest extends BaseTest {
 
-    @Test(groups = "Smoke")
+    @Test(groups = smoke)
     public void crudBookingTest() {
         RestAssured.baseURI = baseUrl;
         var schemaFile = "booker/createBookerSchema.json";
@@ -88,7 +88,7 @@ public class BookingTest extends BaseTest {
                 .time(lessThan(4000L));
     }
 
-    @Test(groups = "Regression")
+    @Test(groups = regression)
     public void idNotFoundTest() {
         var id = 5000;
         var schemaJson = "booker/bookerSchema.json";
@@ -110,7 +110,7 @@ public class BookingTest extends BaseTest {
     }
 
 
-    @Test(groups = "Regression")
+    @Test(groups = regression)
     public void deleteInexistanceIDTest() {
         var id = 50000;
 
@@ -132,7 +132,7 @@ public class BookingTest extends BaseTest {
                 .time(lessThan(4000L));
     }
 
-    @Test(groups = "Regression")
+    @Test(groups = regression)
     public void deleteFailTest() {
         var id = 10489;
 

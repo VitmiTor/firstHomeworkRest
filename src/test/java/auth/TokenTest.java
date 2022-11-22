@@ -12,7 +12,7 @@ import utilities.RequestFilter;
 import static org.hamcrest.Matchers.lessThan;
 
 public class TokenTest extends BaseTest {
-    @Test(groups = "Regression")
+    @Test(groups = smoke)
     public void getToken() {
         RestAssured.baseURI = baseUrl;
         var schemaFile = "token/token.json";
