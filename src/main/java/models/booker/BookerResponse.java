@@ -17,8 +17,8 @@ public class BookerResponse {
     private final String additionalNeed;
     @JsonProperty("bookingdates")
     private final BookingDatesResponse bookingDates;
-    private int numberMin = 50;
-    private int numberMax = 500;
+    private final int numberMin = 50;
+    private final int numberMax = 500;
 
     public BookerResponse() {
         var faker = new Faker();
