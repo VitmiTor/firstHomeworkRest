@@ -19,10 +19,12 @@ public class BookerResponse {
     private final BookingDatesResponse bookingDates;
 
     public BookerResponse() {
+        var numberMin = 50;
+        var numberMax = 500;
         var faker = new Faker();
         firstname = faker.name().firstName();
         lastname = faker.name().lastName();
-        totalPrice = faker.number().numberBetween(50, 500);
+        totalPrice = faker.number().numberBetween(numberMin, numberMax);
         depositPaid = faker.bool().bool();
         additionalNeed = faker.animal().name();
         bookingDates = new BookingDatesResponse();
